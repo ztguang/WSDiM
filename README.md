@@ -1,2 +1,2 @@
 # WSDiM
-Web Service Discovery Framework in MANETs
+Multi-Engine based Web Service Discovery Architecture in MANETs
