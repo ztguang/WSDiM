@@ -8,7 +8,10 @@ The test steps are as follows.
 
 4. Run client-manet on node N11. Node N11 sends data to node N10, which then sends data to nodes N1–N9.
 
-5. Now, node N10 moves to a new location, which changes the network topology. The server-manet program is executed and elects node N9 as the new M-MSD. Node N10 changes to act as an S-MSD; however, it cannot visit M-MSD (N9) because of its disconnection from other nodes. The server-manet program is executed on nodes N6 and N8. Then, nodes N6 and N8 are elected as S-MSDs again and connected to the M-MSD.
+5. Now, node N10 moves to a new location, which changes the network topology. The server-manet program is executed and 
+elects node N9 as the new M-MSD. Node N10 changes to act as an S-MSD; however, it cannot visit M-MSD (N9) because of 
+its disconnection from other nodes. The server-manet program is executed on nodes N6 and N8. Then, nodes N6 and N8 
+are elected as S-MSDs again and connected to the M-MSD.
 
 6. The client-manet is executed again on node N11. Node N11 sends data to node N9, which then sends data to nodes N1–N8.
 
