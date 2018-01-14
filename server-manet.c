@@ -652,6 +652,8 @@ void *send2slave(void *arg)
 				} // end for
 			} // end if
 		} // end for
+
+		sleep(1);
 	} // end while
 } //end send2slave()
 //----------------------------------------------------------------------used to syn multi-engine  - end
@@ -701,6 +703,8 @@ void *WSLT_pub_client(void *arg)
 			// timestamp
 			gettimeofday(&tv,NULL);
 			printf("WSLT_pub_client (%s) Send SQL to WSLT_pub_server (%s): [ %s ] at millisecond:%ld\n", self_ip, masterip, sql, tv.tv_sec*1000 + tv.tv_usec/1000);
+
+			sleep(1);
 
 		} else {		// socket disconnected 
 			CHK(close(sock));
