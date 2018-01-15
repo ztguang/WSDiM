@@ -1,4 +1,10 @@
 /*
+  The source code file is released under GNU GPL V2,V3
+  Author: Tongguang Zhang
+  Date: 2018-01-12
+*/
+
+/*
 systemctl start mariadb.service
 mysql -u root -p -e 'create database bpms;' 
 mysql -uroot -p bpms < wslt.sql
