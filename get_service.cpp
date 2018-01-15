@@ -1,3 +1,9 @@
+/*
+  The source code file is released under GNU GPL V2,V3
+  Author: Tongguang Zhang
+  Date: 2018-01-12
+*/
+
 //g++ -I/usr/include/mysql -L/usr/lib64/mysql -lmysqlclient -std=c++11 -O2 -o get_service get_service.cpp mysql_operate.cpp permutation.cpp
 
 // indent -npro -kr -i8 -ts8 -sob -l280 -ss -ncs -cp1 *.c *.h
