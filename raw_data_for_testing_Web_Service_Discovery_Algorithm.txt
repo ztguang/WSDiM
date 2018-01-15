@@ -1,0 +1,1655 @@
+
+[root@localhost test_WSDA]# uname -a
+Linux localhost.localdomain 4.14.8-200.fc26.x86_64 #1 SMP Wed Dec 20 19:05:23 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+[root@localhost test_WSDA]# cat /proc/cpuinfo 
+processor	: 31
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 62
+model name	: Intel(R) Xeon(R) CPU E5-2640 v2 @ 2.00GHz
+stepping	: 4
+microcode	: 0x428
+cpu MHz		: 2000.159
+cache size	: 20480 KB
+physical id	: 1
+siblings	: 16
+core id		: 7
+cpu cores	: 8
+apicid		: 47
+initial apicid	: 47
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 cx16 xtpr pdcm pcid dca sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm cpuid_fault epb intel_ppin tpr_shadow vnmi flexpriority ept vpid fsgsbase smep erms xsaveopt dtherm ida arat pln pts
+bugs		:
+bogomips	: 4005.56
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+[root@localhost test_WSDA]# free
+              total        used        free      shared  buff/cache   available
+Mem:       65945924      753936    61822500       10576     3369488    64308000
+Swap:      10485756           0    10485756
+
+
+# 共做 15 次实验，即，运行 15 次 get_service 命令（每次都要修改 get_service.cpp，编译）
+# 共做 15 次实验，每次都要修改 num_of_keywords
+# 共做 15 次实验，每次都要修改 clusterID[36]
+	# 修改 get_service.cpp 三处：
+	int num_of_keywords=8;
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");
+	char clusterID[36] = "2406469941B149A6A796C06DEB2B157E";
+
+#----------------------------------------------------------------------------------------
+# clusterID  个数 40		char clusterID[36] = "2406469941B149A6A796C06DEB2B157E";
+#----------------------------------------------------------------------------------------
+
+# num_of_keywords=2
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");							//22
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+0.9378		0.0073		0.0069
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.970s
+user	0m0.008s
+sys	0m0.006s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.873s
+user	0m0.009s
+sys	0m0.004s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.850s
+user	0m0.005s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.917s
+user	0m0.005s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.914s
+user	0m0.009s
+sys	0m0.006s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.045s
+user	0m0.007s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.985s
+user	0m0.009s
+sys	0m0.009s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.933s
+user	0m0.007s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.969s
+user	0m0.008s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.922s
+user	0m0.006s
+sys	0m0.009s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=3
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");	strcpy(argv[2],"get");	//33
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+0.9791		0.0084		0.0126
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.144s
+user	0m0.008s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.945s
+user	0m0.005s
+sys	0m0.016s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.930s
+user	0m0.011s
+sys	0m0.011s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.919s
+user	0m0.011s
+sys	0m0.011s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.986s
+user	0m0.008s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.997s
+user	0m0.012s
+sys	0m0.009s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.917s
+user	0m0.008s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.868s
+user	0m0.007s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.155s
+user	0m0.007s
+sys	0m0.014s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m0.930s
+user	0m0.007s
+sys	0m0.013s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=4
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");	strcpy(argv[2],"get");	strcpy(argv[3],"the");	//44
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+1.1641		0.0141		0.0387
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.154s
+user	0m0.014s
+sys	0m0.039s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.149s
+user	0m0.010s
+sys	0m0.042s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.186s
+user	0m0.010s
+sys	0m0.043s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.213s
+user	0m0.011s
+sys	0m0.042s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.284s
+user	0m0.014s
+sys	0m0.040s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.104s
+user	0m0.018s
+sys	0m0.034s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.152s
+user	0m0.016s
+sys	0m0.037s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.096s
+user	0m0.015s
+sys	0m0.039s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.150s
+user	0m0.019s
+sys	0m0.033s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.153s
+user	0m0.014s
+sys	0m0.038s
+[root@localhost ~]# 
+
+
+
+
+
+# num_of_keywords=5
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");	//55
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+2.2777		0.0514		0.1683
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.251s
+user	0m0.053s
+sys	0m0.169s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.195s
+user	0m0.061s
+sys	0m0.156s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.477s
+user	0m0.052s
+sys	0m0.168s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.273s
+user	0m0.060s
+sys	0m0.161s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.144s
+user	0m0.048s
+sys	0m0.172s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.318s
+user	0m0.049s
+sys	0m0.174s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.374s
+user	0m0.054s
+sys	0m0.164s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.217s
+user	0m0.054s
+sys	0m0.164s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.301s
+user	0m0.043s
+sys	0m0.177s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.227s
+user	0m0.040s
+sys	0m0.178s
+[root@localhost ~]# 
+
+
+
+
+
+# num_of_keywords=6
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");	//66
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");	strcpy(argv[5],"to");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+9.5742		0.2895		0.9851
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.560s
+user	0m0.284s
+sys	0m0.980s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.733s
+user	0m0.317s
+sys	0m0.957s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.619s
+user	0m0.296s
+sys	0m0.998s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.613s
+user	0m0.269s
+sys	0m1.019s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.704s
+user	0m0.306s
+sys	0m0.958s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.361s
+user	0m0.298s
+sys	0m0.962s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.568s
+user	0m0.291s
+sys	0m0.972s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.477s
+user	0m0.277s
+sys	0m1.001s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.619s
+user	0m0.284s
+sys	0m1.001s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m9.488s
+user	0m0.273s
+sys	0m1.003s
+[root@localhost ~]# 
+
+
+
+
+
+# num_of_keywords=7
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");	//77
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");	strcpy(argv[5],"to");
+	strcpy(argv[6],"it");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+62.6364		2.1572		6.9432
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m2.706s
+user	0m2.376s
+sys	0m7.171s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m2.308s
+user	0m2.082s
+sys	0m6.833s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m2.781s
+user	0m2.123s
+sys	0m6.891s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m2.144s
+user	0m2.130s
+sys	0m6.901s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m3.243s
+user	0m2.075s
+sys	0m6.920s
+[root@localhost ~]# 
+
+
+# num_of_keywords=8 耗时更长，因此没有必要做
+
+
+
+
+
+
+#----------------------------------------------------------------------------------------
+# clusterID  个数 60		char clusterID[36] = "27E7D8482624498087BD1DABBD43FF96";
+#----------------------------------------------------------------------------------------
+
+# num_of_keywords=2
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");							//22
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+1.3262		0.0071		0.0097
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.337s
+user	0m0.007s
+sys	0m0.011s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.351s
+user	0m0.006s
+sys	0m0.010s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.401s
+user	0m0.006s
+sys	0m0.012s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.318s
+user	0m0.010s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.394s
+user	0m0.004s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.288s
+user	0m0.004s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.326s
+user	0m0.006s
+sys	0m0.010s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.230s
+user	0m0.010s
+sys	0m0.008s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.280s
+user	0m0.009s
+sys	0m0.007s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.337s
+user	0m0.009s
+sys	0m0.006s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=3
+
+++++++++++++++++++++++++++++++++++++++
+	//strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");	strcpy(argv[2],"get");			//33
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+1.4232		0.0097		0.018
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.353s
+user	0m0.013s
+sys	0m0.016s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.512s
+user	0m0.011s
+sys	0m0.018s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.535s
+user	0m0.009s
+sys	0m0.020s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.321s
+user	0m0.009s
+sys	0m0.019s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.338s
+user	0m0.010s
+sys	0m0.019s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.368s
+user	0m0.010s
+sys	0m0.018s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.506s
+user	0m0.014s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.456s
+user	0m0.006s
+sys	0m0.020s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.496s
+user	0m0.008s
+sys	0m0.017s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.347s
+user	0m0.007s
+sys	0m0.020s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=4
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");	strcpy(argv[2],"get");	strcpy(argv[3],"the");	//44
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+1.7035		0.0202		0.0537
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.767s
+user	0m0.023s
+sys	0m0.051s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.807s
+user	0m0.020s
+sys	0m0.054s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.664s
+user	0m0.020s
+sys	0m0.053s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.560s
+user	0m0.022s
+sys	0m0.051s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.725s
+user	0m0.017s
+sys	0m0.058s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.735s
+user	0m0.020s
+sys	0m0.054s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.765s
+user	0m0.020s
+sys	0m0.056s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.578s
+user	0m0.018s
+sys	0m0.055s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.758s
+user	0m0.023s
+sys	0m0.049s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m1.676s
+user	0m0.019s
+sys	0m0.056s
+[root@localhost ~]# 
+
+
+
+
+
+
+# num_of_keywords=5
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");				//55
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+3.4758		0.072		0.2541
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.541s
+user	0m0.077s
+sys	0m0.253s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.541s
+user	0m0.067s
+sys	0m0.265s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.826s
+user	0m0.086s
+sys	0m0.239s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.148s
+user	0m0.076s
+sys	0m0.246s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.311s
+user	0m0.067s
+sys	0m0.263s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.616s
+user	0m0.068s
+sys	0m0.255s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.661s
+user	0m0.053s
+sys	0m0.273s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.441s
+user	0m0.075s
+sys	0m0.253s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.270s
+user	0m0.072s
+sys	0m0.253s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.403s
+user	0m0.079s
+sys	0m0.241s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=6
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");				//66
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");	strcpy(argv[5],"to");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+14.3644		0.4402		1.4798
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.303s
+user	0m0.444s
+sys	0m1.487s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.431s
+user	0m0.471s
+sys	0m1.434s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.309s
+user	0m0.456s
+sys	0m1.465s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.304s
+user	0m0.465s
+sys	0m1.509s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.346s
+user	0m0.444s
+sys	0m1.472s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.491s
+user	0m0.411s
+sys	0m1.480s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.272s
+user	0m0.402s
+sys	0m1.524s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.169s
+user	0m0.450s
+sys	0m1.446s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.520s
+user	0m0.425s
+sys	0m1.484s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m14.499s
+user	0m0.434s
+sys	0m1.497s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=7
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");				//77
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");	strcpy(argv[5],"to");
+	strcpy(argv[6],"it");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+93.1272		3.2566		10.2382
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m32.492s
+user	0m3.052s
+sys	0m10.390s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m32.944s
+user	0m3.738s
+sys	0m9.643s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m34.056s
+user	0m3.279s
+sys	0m10.466s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m32.426s
+user	0m3.113s
+sys	0m10.377s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	1m33.718s
+user	0m3.101s
+sys	0m10.315s
+[root@localhost ~]# 
+
+
+
+
+
+
+
+
+#----------------------------------------------------------------------------------------
+# clusterID  个数 100		char clusterID[36] = "B3A8099C349A45AE9AF9E272838E7712";
+#----------------------------------------------------------------------------------------
+
+
+# num_of_keywords=2
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");							//22
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+2.3329		0.0087		0.0132
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.179s
+user	0m0.008s
+sys	0m0.012s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.509s
+user	0m0.010s
+sys	0m0.011s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.316s
+user	0m0.007s
+sys	0m0.014s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.114s
+user	0m0.006s
+sys	0m0.015s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.434s
+user	0m0.015s
+sys	0m0.010s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.546s
+user	0m0.014s
+sys	0m0.012s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.133s
+user	0m0.008s
+sys	0m0.013s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.369s
+user	0m0.006s
+sys	0m0.015s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.426s
+user	0m0.003s
+sys	0m0.018s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m2.303s
+user	0m0.010s
+sys	0m0.012s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=3
+
+++++++++++++++++++++++++++++++++++++++
+	//strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");	strcpy(argv[2],"get");			//33
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+3.3783		0.0151		0.0295
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.448s
+user	0m0.018s
+sys	0m0.025s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.378s
+user	0m0.018s
+sys	0m0.023s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.320s
+user	0m0.016s
+sys	0m0.028s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.459s
+user	0m0.016s
+sys	0m0.032s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.501s
+user	0m0.015s
+sys	0m0.030s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.241s
+user	0m0.014s
+sys	0m0.036s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.351s
+user	0m0.011s
+sys	0m0.035s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.494s
+user	0m0.010s
+sys	0m0.033s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.341s
+user	0m0.016s
+sys	0m0.027s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.250s
+user	0m0.017s
+sys	0m0.026s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=4
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");	strcpy(argv[2],"get");	strcpy(argv[3],"the");	//44
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+4.1333		0.0365		0.1002
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.295s
+user	0m0.030s
+sys	0m0.101s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.902s
+user	0m0.033s
+sys	0m0.099s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.072s
+user	0m0.039s
+sys	0m0.094s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.184s
+user	0m0.028s
+sys	0m0.103s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.830s
+user	0m0.046s
+sys	0m0.099s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.195s
+user	0m0.036s
+sys	0m0.094s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.797s
+user	0m0.030s
+sys	0m0.101s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.073s
+user	0m0.050s
+sys	0m0.112s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m3.910s
+user	0m0.039s
+sys	0m0.101s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m4.075s
+user	0m0.034s
+sys	0m0.098s
+[root@localhost ~]# 
+
+
+
+
+
+
+# num_of_keywords=5
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");				//55
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+7.1102		0.1505		0.4493
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.012s
+user	0m0.151s
+sys	0m0.462s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.103s
+user	0m0.142s
+sys	0m0.417s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.216s
+user	0m0.128s
+sys	0m0.459s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.076s
+user	0m0.148s
+sys	0m0.409s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.043s
+user	0m0.166s
+sys	0m0.444s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m6.983s
+user	0m0.117s
+sys	0m0.431s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.523s
+user	0m0.229s
+sys	0m0.523s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m6.902s
+user	0m0.139s
+sys	0m0.434s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.017s
+user	0m0.125s
+sys	0m0.435s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m7.227s
+user	0m0.160s
+sys	0m0.479s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=6
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");				//66
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");	strcpy(argv[5],"to");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+24.9387		0.7606		2.4916
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m25.128s
+user	0m0.765s
+sys	0m2.565s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m24.535s
+user	0m0.784s
+sys	0m2.446s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m25.170s
+user	0m0.758s
+sys	0m2.485s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m24.729s
+user	0m0.719s
+sys	0m2.472s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m24.943s
+user	0m0.774s
+sys	0m2.451s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m25.024s
+user	0m0.733s
+sys	0m2.529s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m25.037s
+user	0m0.747s
+sys	0m2.465s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m25.219s
+user	0m0.797s
+sys	0m2.542s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m24.537s
+user	0m0.757s
+sys	0m2.453s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	0m25.065s
+user	0m0.772s
+sys	0m2.508s
+[root@localhost ~]# 
+
+
+
+
+# num_of_keywords=7
+
+++++++++++++++++++++++++++++++++++++++
+	strcpy(argv[0],"get");	strcpy(argv[1],"UAV");	strcpy(argv[2],"speed");				//77
+	strcpy(argv[3],"the");	strcpy(argv[4],"of");	strcpy(argv[5],"to");
+	strcpy(argv[6],"it");
+++++++++++++++++++++++++++++++++++++++
+
+ave-real(s)	ave-user(s)	ave-sys(s)
+154.5956	5.3486		17.3328
+
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	2m33.758s
+user	0m5.307s
+sys	0m17.209s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	2m35.390s
+user	0m5.383s
+sys	0m17.433s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	2m33.829s
+user	0m5.410s
+sys	0m17.087s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	2m34.919s
+user	0m5.539s
+sys	0m17.515s
+[root@localhost ~]# time ./get_service
+Logged on to database sucessfully
+OpenRecordset
+
+
+real	2m35.082s
+user	0m5.104s
+sys	0m17.420s
+[root@localhost ~]# 
