@@ -64,6 +64,8 @@ void compute_similarity(const char *QInputs, const char *QOutputs, const char *S
 	argv = new char*[num_of_keywords];		// 关键字 首字母 大小写  没关系， 在 MySQL中，SQL的模式缺省是忽略大小写的。
 	for( int i = 0; i < num_of_keywords; i++ )
 		argv[i] = new char[10];
+
+		//共做 15 次实验，即，运行 15 次 get_service 命令（每次都要修改 get_service.cpp，编译），测试结果记录在文件：test-data.sh
 /*
 	strcpy(argv[0],"UAV");	strcpy(argv[1],"speed");							//22	//*/
 /*
