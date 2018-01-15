@@ -185,6 +185,7 @@ int main(int argc, char **argv)
 			printf("\n");
 		}
 	}
+	
 	//解析对象
 	db->FreeResult(res);
 	delete db;
